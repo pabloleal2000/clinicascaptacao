@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root{
+    --font-poppins:'poppins';
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden; /* Evita a rolagem horizontal */
+    background-color: rgb(230, 230, 230);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+ }
+
+
+.blur{
+    filter: blur(5px);
+}
+
+header{
+    width: auto;
+    height: 3rem;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+    background-color: rgb(208, 208, 208);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-family: var(--font-poppins);
+    
+}
+
+a:hover {
+    color: #000; /* Altere para a cor desejada quando o mouse passar sobre o link */
+    text-decoration: none; /* Retira o underline do link */
+}
+
+nav{
+    gap: 30px;
+    display: flex;
+}
+
+
+.centro{
+    margin: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 3rem;
+    min-width: 300px;
+
+    
+}
+
+.centroTexto{
+    height: 500px; 
+    max-width: 700px;
+}
+
+.centroTexto h2{
+    margin: 1rem 3rem;
+    font-family: var(--font-poppins);
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.centroTexto p{
+    font-family: var(--font-poppins);
+    font-size: 1.25rem;
+    margin: 1rem 3rem;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+
+}
+
+/* .centroImagem{
+    margin: 0 1rem;
+} */
+
+.img_box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.anuncioSplide p{
+    font-family: var(--font-poppins);
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+
+}
+.splide{
+    padding-bottom: 3rem;
+}
+
+.containerAnuncio {
+    background: url('img/background/background img.png');
+    background-size: cover; /* Faz a imagem cobrir todo o contêiner */
+    background-position: center; /* Centraliza a imagem no contêiner */
+    height: 70%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 4rem;
+}
+
+.atendimento24hrs{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: red;
+    padding-top: 1rem;
+}
+.atendimento24hrs p{
+    font-size: 2.5rem;
+    font-family: var(--font-poppins);
+    font-weight: bold;
+    color: red;
+}
+.faleConosco2{
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 20px 30px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+
+}
+
+.containerAnuncio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.anuncio{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10rem;
+    font-weight: bold;
+}
+
+.conteudoAnuncio{
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 20px;
+}
+
+
+.botaoAnuncio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.faleConosco{
+    background-color: black;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.footer{
+    background-color: rgb(208, 208, 208);
+    color: black;
+    text-align: center;
+}
+
+.pulsar img{
+    width: 50px;
+    height: 50px;
+    background: transparent;
+}
+
+.pulsar{
+    position: fixed; bottom: 110px; right: 50px; 
+    width: 80px;
+    height: 80px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pulsar:before, .pulsar:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    border: 2px solid #25D366;
+    animation: animarBotao 1.5s linear infinite;
+    opacity: 0;
+    pointer-events: none; /* Adicionado para permitir cliques */
+}
+
+.pulsar:after{
+    animation-delay: 5s;
+}
+
+
+@keyframes animarBotao {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    
+}
+
+.carousel {
+    height: 500px; 
+    max-width: 700px;
+    overflow: hidden;
+
+    
+}
+.carousel-item {
+    height: 500px; 
+    overflow: hidden;
+    border-radius: 1rem;
+    
+}
+
+.carousel-item img {
+    height: 100%;
+    max-width: 720px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    .navbar{
+        top: 0;
+        background-color: royalblue;
+        position: fixed;
+        width: 100%;
+        z-index: 6;
+    }
+    .carousel {
+       
+        height: 250px; /* Ajuste este valor para a altura desejada */
+        max-width: 550px;
+        overflow: hidden;
+        align-items: center;
+    }
+    .carousel-item {
+        height: 250px; /* Ajuste este valor para a altura desejada */
+        overflow: hidden;
+        align-items: center;
+        
+
+    }
+    
+    .carousel-item img {
+        height: 100%;
+        object-fit: cover;
+        align-items: center;
+       
+        
+
+    }
+
+    .atendimento24hrs {
+        display: none;
+    }
+
+
+    .centro {
+        display: block;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 5rem 1rem 0 1rem ;
+    }
+
+    .centroTexto{
+        display: none;
+    }
+
+
+
+    .pulsar img{
+        width: 40px;
+        height: 40px;
+        background: transparent;
+    }
+    
+    .pulsar{
+        position: fixed; bottom: 80px; right: 20px; 
+        width: 70px;
+        height: 70px;
+        background-color: #25D366;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 6;
+
+    }
+    
+    .pulsar:before, .pulsar:after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: -10px;
+        right: -10px;
+        top: -10px;
+        bottom: -10px;
+        border-radius: 50%;
+        border: 2px solid #25D366;
+        animation: animarBotao 1.5s linear infinite;
+        opacity: 0;
+        pointer-events: none; /* Adicionado para permitir cliques */
+       
+
+    }
+
+    
+   
+}
+
+.mobile-only {
+    display: none;
+}
+.mobile-only2 {
+    display: none;
+}
+
+/* Em telas com no máximo 768px de largura (dispositivos móveis), mostra o texto e o botão */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .mobile-only2 {
+        display: block;
+        margin-bottom: 2rem;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+    .mobile-only p{
+        font-weight: bold;
+        color: red;
+        font-size: 2rem;
+
+    }
+    .mobile-only2 h2{
+        font-weight: bold;
+        font-size: 2rem;
+
+    }
+    .mobile-only2 p{
+        font-size: 1rem;
+
+    }
+    .anuncioSplide p{
+        font-size: 1rem;
+        margin: 0;
+        padding: 0 0 0 0;
+    }
+    
+}
